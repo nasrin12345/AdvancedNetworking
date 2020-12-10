@@ -1,0 +1,79 @@
+BGP LAB7 - Aggregation - Base Addressing
+
+
+R1
+
+hostname R1
+!
+no ip domain lookup
+!
+interface Loopback0
+ip address 192.168.1.1 255.255.255.0
+!
+interface GigabitEthernet1/0
+ip address 192.168.13.1 255.255.255.0
+no shut
+!
+line con 0
+exec-timeout 0 0
+
+
+R2
+
+hostname R2
+!
+no ip domain lookup
+!
+interface Loopback0
+ip address 192.168.2.2 255.255.255.0
+!
+interface GigabitEthernet1/0
+ip address 192.168.23.2 255.255.255.0
+no shut
+!
+line con 0
+exec-timeout 0 0
+
+
+R3
+
+hostname R3
+!
+no ip domain lookup
+!
+interface Loopback0
+ip address 192.168.3.3 255.255.255.0
+!
+interface GigabitEthernet1/0
+ip address 192.168.23.3 255.255.255.0
+no shut
+!
+interface GigabitEthernet2/0
+ip address 192.168.13.3 255.255.255.0
+no shut
+!
+interface GigabitEthernet3/0
+ip address 172.16.34.3 255.255.255.0
+no shut
+!
+line con 0
+exec-timeout 0 0
+
+
+R4
+
+hostname R4
+!
+no ip domain lookup
+!
+interface Loopback0
+ip address 192.168.4.4 255.255.255.0
+!
+interface GigabitEthernet1/0
+ip address 172.16.34.4 255.255.255.0
+no shut
+!
+line con 0
+exec-timeout 0 0
+
+
